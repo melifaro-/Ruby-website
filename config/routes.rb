@@ -1,4 +1,21 @@
 HW::Application.routes.draw do
+  
+  resources :users
+
+  root :to => 'pages#home'
+  # match "/" => "pages#home"
+
+  match "/equipment" => "pages#equipment"
+
+  match "/news" => "pages#news"
+
+  match "/atricles" => "pages#atricles"
+
+  match "/contacts" => "pages#contacts"
+
+  match "/signup" => "users#new"
+ 
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
