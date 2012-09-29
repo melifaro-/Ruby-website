@@ -1,7 +1,7 @@
 module ApplicationHelper
 
 	def full_title(page_title)
-		base_title = 'Med-fox.ru Продажа Медицинского Оборудования'
+		base_title = 'Med-fox'
 		if page_title.empty?
 			base_title
 		else
