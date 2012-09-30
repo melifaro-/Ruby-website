@@ -1,0 +1,23 @@
+<hr style="margin: 0 0 14px;" />
+<div class="row">
+	<div class="span4">
+		<h3>Новости</h3>
+		<div class="one-new"> 
+			<p>Ещё не добавленно ни одной новости</p>
+		</div>
+	</div>
+	<div class="span4">
+		<h3>Статьи</h3>
+		<div class="one-new">                
+			<div class="metadata">
+				<div class="published">28 Июля 2012</div>
+			</div>
+			<h4><a href="#"><%= Post.last.title %></a></h4>
+			<p><%= raw(Post.last.text).first(200) %>...</p>
+			<%= link_to 'Читать далее...', post_path(Post.last) %>
+		</div>
+	</div>
+	<div class="span4">
+		<h3>Акции</h3>
+	</div>
+</div>

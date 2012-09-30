@@ -1,15 +1,17 @@
 HW::Application.routes.draw do
+
+  match "/posts/:id" => 'posts#item', :as => :post
+  match "/posts" => "posts#all"  
   
   resources :users
 
   root :to => 'pages#home'
-  # match "/" => "pages#home"
 
   match "/equipment" => "pages#equipment"
 
   match "/news" => "pages#news"
 
-  match "/atricles" => "pages#atricles"
+  match "/atricles" => "posts#all"
 
   match "/contacts" => "pages#contacts"
 
