@@ -23,6 +23,10 @@ class Post < ActiveRecord::Base
   end
 
   def post_type
-    Post::POSTTYPES.at(self.pcid)
+    if 0 == self.pcid
+      return 'News'
+    else
+      return 'Ar'
+    end
   end
 end
