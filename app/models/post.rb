@@ -23,6 +23,6 @@ class Post < ActiveRecord::Base
   end
 
   def post_type
-    POSTTYPES[self.pcid]
+    POSTTYPES.at(self.pcid)
   end
 end
