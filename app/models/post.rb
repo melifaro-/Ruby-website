@@ -21,4 +21,8 @@ class Post < ActiveRecord::Base
   def short_text
   	Utility.strip_html(self.text).first(200)
   end
+
+  def post_type
+    "Новость"
+  end
 end
