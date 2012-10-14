@@ -2,19 +2,26 @@
 
 <div class="breads"><%= link_to "Главная", root_path %>&nbsp;&rsaquo;&nbsp;Новости</div>
 
-<h3>Статьи</h3>
+<h3>Новости</h3>
 <div class="row">
-  <% @posts.each do |post| %>
+  <% if !Post.where(:pcid => 0).last %>
       <div class="span6">
-        <div class="one-new">
-          <div class="metadata">
-            <div class="published"><%= time_ago_in_words(post.created_at) %></div>
-          </div>
-          <h4><%= link_to post.title, news_path(post) %></h4>
-          <p><%= post.short_text %>..</p>
-          <%= link_to 'Читать далее...', news_path(post) %>
-          <br>
-        </div>
+        <p>Ещё не добавленно ни одной новости.</p>
       </div>
+  <% else %>
+      <% @posts.each do |post| %>
+          <div class="span6">
+            <div class="one-new">
+              <div class="metadata">
+                <div class="published"><%= time_ago_in_words(post.created_at) %></div>
+              </div>
+              <h4><%= link_to post.title, news_path(post) %></h4>
+
+              <p><%= post.short_text %>..</p>
+              <%= link_to 'Читать далее...', news_path(post) %>
+              <br>
+            </div>
+          </div>
+      <% end %>
   <% end %>
-</div> 
+</div>

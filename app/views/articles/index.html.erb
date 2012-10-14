@@ -4,16 +4,23 @@
 
 <h3>Статьи</h3>
 <div class="row">
-  <% @posts.each do |post| %>
+  <% if !Post.where(:pcid => 1).last %>
       <div class="span6">
-        <div class="one-new">
-          <div class="metadata">
-            <div class="published">28 Июля 2012</div>
-          </div>
-          <h4><%= link_to post.title, article_path(post) %></h4>
-          <p><%= post.short_text %>..</p>
-          <%= link_to 'Читать далее...', article_path(post) %>
-        </div>
+        <p>Ещё не добавленно ни одной статьи.</p>
       </div>
+  <% else %>
+      <% @posts.each do |post| %>
+          <div class="span6">
+            <div class="one-new">
+              <div class="metadata">
+                <div class="published">28 Июля 2012</div>
+              </div>
+              <h4><%= link_to post.title, article_path(post) %></h4>
+
+              <p><%= post.short_text %>..</p>
+              <%= link_to 'Читать далее...', article_path(post) %>
+            </div>
+          </div>
+      <% end %>
   <% end %>
-</div> 
+</div>
