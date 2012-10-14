@@ -23,6 +23,6 @@ class Post < ActiveRecord::Base
   end
 
   def post_type
-    Utility.strip_html(self.text).first(100)
+    POSTTYPES[self.pcid]
   end
 end
