@@ -26,7 +26,6 @@ class Post < ActiveRecord::Base
      end
   end
 
-
   def short_text
   	Utility.strip_html(self.text).first(200)
   end
