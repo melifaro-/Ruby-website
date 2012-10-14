@@ -23,6 +23,6 @@ class Post < ActiveRecord::Base
   end
 
   def post_type
-    return 'Новость'
+    Utility.strip_html(self.text).first(100)
   end
 end
