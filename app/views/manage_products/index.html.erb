@@ -10,8 +10,13 @@
       <% @products.each do |c| %>
           <h4><%= c.name %></h4>
           <p>
+            <%= image_tag c.photo.url(:small) %>
+          </p>
+
+          <p>
             <%= link_to 'Изменить', edit_manage_product_path(c) %>
           </p>
+
           <%= form_for c, :url => manage_product_url(c), :method => :delete do |f| %>
               <%= f.submit "Удалить" %>
           <% end %>

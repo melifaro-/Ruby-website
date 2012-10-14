@@ -13,6 +13,9 @@
 
     <%= f.label :characteristics %>
     <%= f.text_area :characteristics, :size => "70x10" %> <br />
+    <p>
+      <%= image_tag @product.photo.url(:small) %>
+    </p>
 
     <%= f.file_field :photo %><br />
 
