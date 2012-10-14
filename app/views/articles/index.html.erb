@@ -1,0 +1,19 @@
+<% provide(:title, 'Статьи') %>
+
+<div class="breads"><%= link_to "Главная", root_path %>&nbsp;&rsaquo;&nbsp;Статьи</div>
+
+<h3>Статьи</h3>
+<div class="row">
+  <% @posts.each do |post| %>
+      <div class="span6">
+        <div class="one-new">
+          <div class="metadata">
+            <div class="published">28 Июля 2012</div>
+          </div>
+          <h4><%= link_to post.title, article_path(post) %></h4>
+          <p><%= post.short_text %>..</p>
+          <%= link_to 'Читать далее...', article_path(post) %>
+        </div>
+      </div>
+  <% end %>
+</div> 

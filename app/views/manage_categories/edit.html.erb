@@ -1,0 +1,16 @@
+<% provide(:title, 'Редактирование категории') %>
+
+<div class="breads" xmlns="http://www.w3.org/1999/html"><%= link_to "Back office", admin_path %>&nbsp;&rsaquo;&nbsp;Категории</div>
+
+<h1>Редактирование категории</h1>
+
+<%= form_for @category, :url => url_for(:controller => 'manage_categories', :action => 'update') do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br />
+
+    <%= f.submit %>
+<% end %>
+
+<%= form_for @category, :url => manage_category_url(@category), :method => :delete do |f| %>
+    <%= f.submit "Удалить" %>
+<% end %>

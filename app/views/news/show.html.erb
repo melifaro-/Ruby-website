@@ -1,0 +1,17 @@
+<% provide(:title, @post.title) %>
+
+<div class="breads">
+  <%= link_to "Главная", root_path %>&nbsp;&rsaquo;&nbsp;<%= link_to "Новости", nws_path %>&nbsp;&rsaquo;&nbsp;<%= @post.title %>
+</div>
+<div class="row">
+  <div class="span12">
+    <h1><%= @post.title %></h1>
+    <div class="metadata">
+      <div class="published"><%= time_ago_in_words(@post.created_at) %></div>
+    </div>
+    <div class="page-text">
+      <%= raw(@post.text) %>
+    </div>
+  </div>
+</div>
+<%= render 'layouts/promo' %>

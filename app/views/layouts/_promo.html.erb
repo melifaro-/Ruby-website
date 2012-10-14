@@ -1,23 +1,40 @@
-<hr style="margin: 0 0 14px;" />
+<hr style="margin: 0 0 14px;"/>
 <div class="row">
-	<div class="span4">
-		<h3>Новости</h3>
-		<div class="one-new"> 
-			<p>Ещё не добавленно ни одной новости</p>
-		</div>
-	</div>
-	<div class="span4">
-		<h3>Статьи</h3>
-		<div class="one-new">                
-			<div class="metadata">
-				<div class="published">28 Июля 2012</div>
-			</div>
-			<h4><a href="#"><%= Post.last.title %></a></h4>
-			<p><%= raw(Post.last.text).first(200) %>...</p>
-			<%= link_to 'Читать далее...', post_path(Post.last) %>
-		</div>
-	</div>
-	<div class="span4">
-		<h3>Акции</h3>
-	</div>
+  <div class="span4">
+    <h3>Новости</h3>
+
+    <div class="one-new">
+      <% if !Post.where(:pcid => 0).last %>
+          <p>Ещё не добавленно ни одной новости</p>
+      <% else %>
+          <div class="metadata">
+            <div class="published">28 Июля 2012</div>
+          </div>
+          <h4><a href="#"><%= Post.where(:pcid => 0).last.title %></a></h4>
+
+          <p><%= Post.where(:pcid => 0).last.short_text %>...</p>
+          <%= link_to 'Читать далее...', post_path(Post.where(:pcid => 0).last) %>
+      <% end %>
+    </div>
+  </div>
+  <div class="span4">
+    <h3>Статьи</h3>
+
+    <div class="one-new">
+      <% if !Post.where(:pcid => 1).last! %>
+          <p>Ещё не добавленно ни одной статьи</p>
+      <% else %>
+          <div class="metadata">
+            <div class="published">28 Июля 2012</div>
+          </div>
+          <h4><a href="#"><%= Post.where(:pcid => 1).last.title %></a></h4>
+
+          <p><%= Post.where(:pcid => 1).last.short_text %>...</p>
+          <%= link_to 'Читать далее...', post_path(Post.where(:pcid => 1).last) %>
+      <% end %>
+    </div>
+  </div>
+  <div class="span4">
+    <h3>Акции</h3>
+  </div>
 </div>

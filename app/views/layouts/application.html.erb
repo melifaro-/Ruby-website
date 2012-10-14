@@ -1,49 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title><%= full_title(yield(:title)) %></title>
-	<%= stylesheet_link_tag    "bootstrap" %>
-	<%= stylesheet_link_tag    "Site" %>
-	<%= stylesheet_link_tag    "css" %>
-	<%= javascript_include_tag "jquery" %>
-	<%= javascript_include_tag "prettify" %>
-	<%= javascript_include_tag "bootstrap-transition" %>
-	<%= javascript_include_tag "bootstrap-carousel" %>
-	<%= javascript_include_tag "application" %>
-	<!-- <%= javascript_include_tag "bootstrap-alert" %> -->
-	<!-- <%= javascript_include_tag "bootstrap-modal" %> -->
-	<!-- <%= javascript_include_tag "bootstrap-dropdown" %> -->
-	<!-- <%= javascript_include_tag "bootstrap-scrollspy" %> -->
-	<!-- <%= javascript_include_tag "bootstrap-tab" %> -->
-	<!-- <%= javascript_include_tag "bootstrap-tooltip" %> -->
-	<!-- <%= javascript_include_tag "bootstrap-popover" %> -->
-	<!-- <%= javascript_include_tag "bootstrap-button" %> -->
-	<!-- <%= javascript_include_tag "bootstrap-collapse" %> -->
-	<!-- <%= javascript_include_tag "bootstrap-typeahead" %> -->
-	<%= csrf_meta_tags %>
-	<script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+  <title><%= full_title(yield(:title)) %></title>
+  <%= stylesheet_link_tag "bootstrap" %>
+  <%= stylesheet_link_tag "Site" %>
+  <%= stylesheet_link_tag "css" %>
+  <%= javascript_include_tag "jquery" %>
+  <%= javascript_include_tag "prettify" %>
+  <%= javascript_include_tag "bootstrap-transition" %>
+  <%= javascript_include_tag "bootstrap-carousel" %>
+  <%= javascript_include_tag "application" %>
+  <!-- <%= javascript_include_tag "bootstrap-alert" %> -->
+  <!-- <%= javascript_include_tag "bootstrap-modal" %> -->
+  <!-- <%= javascript_include_tag "bootstrap-dropdown" %> -->
+  <!-- <%= javascript_include_tag "bootstrap-scrollspy" %> -->
+  <!-- <%= javascript_include_tag "bootstrap-tab" %> -->
+  <!-- <%= javascript_include_tag "bootstrap-tooltip" %> -->
+  <!-- <%= javascript_include_tag "bootstrap-popover" %> -->
+  <!-- <%= javascript_include_tag "bootstrap-button" %> -->
+  <!-- <%= javascript_include_tag "bootstrap-collapse" %> -->
+  <!-- <%= javascript_include_tag "bootstrap-typeahead" %> -->
+  <%= csrf_meta_tags %>
+  <script>(function (d) {
+      d.className = "dyn" + d.className.substring(6, d.className.length);
+  })(document.documentElement);
+  </script>
 </head>
 <body>
-	<div class="tripel-123" id="layout-wrapper">
-		<%= render 'layouts/header' %>
-		<%= render 'layouts/navigation' %>
-		<div id="layout-main-container">
-			<div id="layout-main" class="group">
-				<div id="layout-content" class="group">
-					<div id="content" class="group">
-						<div class="zone-content">
-							<article class="content-item page">
-								<%= yield %>
-							</article>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div> 
-	</div>
+<div class="tripel-123" id="layout-wrapper">
+  <%= render 'layouts/header' %>
+  <%= render 'layouts/navigation' %>
+  <div id="layout-main-container">
+    <div id="layout-main" class="group">
+      <div id="layout-content" class="group">
+        <div id="content" class="group">
+          <div class="zone-content">
+            <article class="content-item page">
+              <%= yield %>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-	<%= render 'layouts/footer' %>
+<%= render 'layouts/footer' %>
 
-	<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 <%= debug(params) if Rails.env.development? %>
-</body></html>
+</body>
+</html>

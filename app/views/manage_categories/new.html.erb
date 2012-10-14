@@ -1,0 +1,12 @@
+<% provide(:title, 'Новая категория') %>
+
+<div class="breads" xmlns="http://www.w3.org/1999/html"><%= link_to "Back office", admin_path %>&nbsp;&rsaquo;&nbsp;Категории</div>
+
+<h1>Новая категория</h1>
+
+<%= form_for @category, :url => url_for(:controller => 'manage_categories', :action => 'create') do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br />
+
+    <%= f.submit %>
+<% end %>

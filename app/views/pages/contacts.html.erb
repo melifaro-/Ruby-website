@@ -1,26 +1,54 @@
 <% provide(:title, 'Contacts') %>
+<script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
+<script type="text/javascript">
+    ymaps.ready(init);
+    var myMap;
+
+    function init() {
+        myMap = new ymaps.Map("map", {
+            center:[55.707618, 37.688467],
+            zoom:15
+        });
+        myPlacemark = new ymaps.Placemark([55.707618, 37.688467], {
+            content:'MedFox',
+            balloonContent:'Медицинское оборудование'
+        });
+        myMap.geoObjects.add(myPlacemark);
+        // Создание экземпляра элемента управления
+        myMap.controls.add(
+                new ymaps.control.ZoomControl()
+        );
+
+// Обращение к конструктору класса элемента
+// управления по ключу
+        myMap.controls.add('typeSelector');
+    }
+</script>
 
 <article class="content-item page">
-	<div class="breads"><a href="#">Главная</a>&nbsp;&rsaquo;&nbsp;Контакты</div>
+  <div class="breads"><%= link_to "Главная", root_path %>&nbsp;&rsaquo;&nbsp;Контакты</div>
 
-	<div class="row">
-		<div class="span8">
-			<div class="map">
-				<img src="/images/map.jpg" width="618" height="447"> 
-			</div>       
-		</div>
+  <div class="row">
+    <div class="span8">
+      <div class="map">
+        <div id="map" style="width: 620px; height: 447px"></div>
+        <!--<img src="/images/map.jpg" width="618" height="447"> -->
+      </div>
+    </div>
 
-		<div class="span4">
-			<h1>Medfox</h1>
-			<p><b>Телефон</b> (многоканальный): +7(495) 646-70-78</p>
-			<p><b>Адрес:</b> Москва, Южнопортовая ул., д.5<br>
+    <div class="span4">
+      <h1>Medfox</h1>
+
+      <p><b>Телефон</b> (многоканальный): +7(495) 646-70-78</p>
+
+      <p><b>Адрес:</b> Москва, Южнопортовая ул., д.5<br>
 				<span class="dop-info">Кожуховская<br>
 					50 метров<br>
 					ТТК, Волгоградский проспект, проспект Андропова
 				</span>
-			</p>
+      </p>
 
-		</div>
-	</div>    
+    </div>
+  </div>
 
 </article>

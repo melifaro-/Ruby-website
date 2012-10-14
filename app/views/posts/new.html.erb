@@ -1,0 +1,20 @@
+<% provide(:title, 'Новая запись в блоге') %>
+
+<div class="breads" xmlns="http://www.w3.org/1999/html"><%= link_to "Back office", admin_path %>&nbsp;&rsaquo;&nbsp;<%= link_to "Управление постами", posts_path %>&nbsp;&rsaquo;&nbsp;Статьи и Новости</div>
+
+
+<h1>Новая запись в блоге</h1>
+
+<%= form_for(@post) do |f| %>
+
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :text %>
+    <%= f.text_area :text, :size => "70x10" %>
+    <br/>
+    <%= f.select(:pcid, Post::POSTTYPES) %>
+    <br/>
+    <%= f.submit "Создать запись" %>
+
+<% end %>

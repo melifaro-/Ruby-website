@@ -1,0 +1,25 @@
+<% provide(:title, 'Продукты') %>
+
+<div class="breads" xmlns="http://www.w3.org/1999/html"><%= link_to "Back office", admin_path %>&nbsp;&rsaquo;&nbsp;Продукты</div>
+
+<h3>Продукты</h3>
+<div class="row">
+
+  <div class="span6">
+    <div class="one-new">
+      <% @products.each do |c| %>
+          <h4><%= c.name %></h4>
+          <p>
+            <%= link_to 'Изменить', edit_manage_product_path(c) %>
+          </p>
+          <%= form_for c, :url => manage_product_url(c), :method => :delete do |f| %>
+              <%= f.submit "Удалить" %>
+          <% end %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+<p>
+  <%= link_to 'Новый продукт', new_manage_product_path %>
+</p>

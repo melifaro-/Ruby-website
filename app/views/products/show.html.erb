@@ -1,0 +1,19 @@
+<div class="breads"><%= link_to "Главная", root_path %>&nbsp;&rsaquo;&nbsp;<%= link_to "Оборудование", products_path %>&nbsp;&rsaquo;&nbsp;<%= @product.name %>
+</div>
+
+<h1><%= @product.name %></h1>
+<div class="row">
+  <div class="span12">
+    <p><%= @product.description %>
+    </p>
+
+    <p><%= @product.characteristics %>
+    </p>
+
+    <div class="catalog-imgs">
+      <%= image_tag @product.photo.url() %>
+    </div>
+    <p>По все вопросом приобретения медицинского оборудования обращайтесь по телефону
+      <b>+7 (495) 646-70-78</b>, либо пишите письмо на адрес <a href="mailto:office@med-fox.ru">office@med-fox.ru</a></p>
+  </div>
+</div>

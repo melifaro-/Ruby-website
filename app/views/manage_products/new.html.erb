@@ -1,0 +1,22 @@
+<% provide(:title, 'Новый продукт') %>
+
+<div class="breads" xmlns="http://www.w3.org/1999/html"><%= link_to "Back office", admin_path %>&nbsp;&rsaquo;&nbsp;<%= link_to "Управление продуктами", manage_products_path %>&nbsp;&rsaquo;&nbsp;Новый продукт</div>
+
+<h1>Новый продукт</h1>
+
+<%= form_for @product, :url => url_for(:controller => 'manage_products', :action => 'create'), :html => { :multipart => true } do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %> <br />
+
+    <%= f.label :description %>
+    <%= f.text_area :description, :size => "70x10" %> <br />
+
+    <%= f.label :characteristics %>
+    <%= f.text_area :characteristics, :size => "70x10" %> <br />
+
+    <%= f.file_field :photo %><br />
+
+    <!--:category_id, :characteristics, :description, :image_url, :name-->
+
+    <%= f.submit %>
+<% end %>

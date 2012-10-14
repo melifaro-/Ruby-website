@@ -1,21 +1,36 @@
 HW::Application.routes.draw do
 
-  match "/posts/:id" => 'posts#item', :as => :post
-  match "/posts" => "posts#all"  
-  
-  resources :users
+  #get "manage_products/index"
+  #
+  #get "manage_products/show"
+  #
+  #get "manage_products/edit"
+  #
+  #get "manage_products/new"
+  #
+  #get "products/index"
+  #
+  #get "products/show"
 
   root :to => 'pages#home'
 
-  match "/equipment" => "pages#equipment"
+  get "manage_categories/index"
+  get "manage_categories/show"
 
-  match "/news" => "pages#news"
+  match 'admin', :to => 'admin#index'
 
-  match "/atricles" => "posts#all"
+  resources :manage_categories
+  resources :manage_products
+  resources :posts
+  resources :news, :only => [:index, :show]
+  resources :articles
+  resources :users
+  resources :products
 
+  match "/equipment" => "products#index"
+  match "/news" => "news#index", :as => :nws
+  match "/atricles" => "articles#index"
   match "/contacts" => "pages#contacts"
-
-  # match "/signup" => "users#new"
  
   resources :sessions, :only => [:new, :create, :destroy]
 
