@@ -24,9 +24,9 @@ class Post < ActiveRecord::Base
 
   def post_type
     if 0 == self.pcid
-      return 'Новость'
+      return 'News'
     else
-      return 'Статья'
+      return 'Article'
     end
   end
 end
