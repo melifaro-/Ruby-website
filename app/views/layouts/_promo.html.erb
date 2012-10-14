@@ -21,7 +21,7 @@
     <h3>Статьи</h3>
 
     <div class="one-new">
-      <% if !Post.where(:pcid => 1).last! %>
+      <% if !Post.where(:pcid => 1).last %>
           <p>Ещё не добавленно ни одной статьи</p>
       <% else %>
           <div class="metadata">
