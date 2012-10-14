@@ -13,7 +13,7 @@
     <%= f.label :text %>
     <%= f.text_area :text, :size => "70x10" %>
     <br/>
-    <%= f.select(:pcid, Post::POSTTYPES) %>
+    <%= f.select(:pcid, Post::POSTTYPES.collect {|d| [d, Post::POSTTYPES.index(d)]}) %>
     <br/>
     <%= f.submit "Создать запись" %>
 
