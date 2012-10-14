@@ -23,6 +23,6 @@ class Post < ActiveRecord::Base
   end
 
   def post_type
-    "Новость"
+    return 'Новость'
   end
 end
