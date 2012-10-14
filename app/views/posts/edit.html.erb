@@ -12,7 +12,8 @@
     <%= f.label :text %>
     <%= f.text_area :text, :size => "70x10" %>
     <br/>
-    <%= f.select(:pcid, Post::POSTTYPES.collect {|d| [d, Post::POSTTYPES.index(d)]}, :selected => Post::POSTTYPES.at(:pcid)) %>
+    <!--, :selected => Post::POSTTYPES.at(:pcid)-->
+    <%= f.select(:pcid, Post::POSTTYPES.collect {|d| [d, Post::POSTTYPES.index(d)]}) %>
     <br/>
     <%= f.submit "Обновить" %>
 
