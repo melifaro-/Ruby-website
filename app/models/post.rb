@@ -18,14 +18,6 @@ class Post < ActiveRecord::Base
 
   POSTTYPES = ['News', 'Articles']
 
-  def post_type
-     if self.pcid == 0
-       "Новость"
-     else
-       "Статья"
-     end
-  end
-
   def short_text
   	Utility.strip_html(self.text).first(200)
   end
