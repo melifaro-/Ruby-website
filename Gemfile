@@ -3,11 +3,11 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.8'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'nokogiri', '1.5.5'
+gem "paperclip", "~> 3.0"
 
 group :development do
   gem 'sqlite3', '1.3.5'
   gem 'annotate', '2.5.0'
-  gem "paperclip", "~> 2.0"
 end
 
 
@@ -25,5 +25,4 @@ gem 'jquery-rails', '2.0.2'
 
 group :production do
   gem 'pg', '0.14.1'
-  gem "paperclip", "~> 3.0"
 end

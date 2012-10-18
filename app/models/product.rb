@@ -19,8 +19,13 @@
 class Product < ActiveRecord::Base
   attr_accessible :category_id, :characteristics, :description, :image_url, :name, :photo
   has_attached_file :photo, :styles => { :small => "150x150>" },
-                    :url  => "/assets/products/:id/:style/:basename.:extension",
-                    :path => ":rails_root/public/assets/products/:id/:style/:basename.:extension"
+                    #:url  => "/assets/products/:id/:style/:basename.:extension",
+                    #:path => ":rails_root/public/assets/products/:id/:style/:basename.:extension"
+  #has_attached_file :avatar,
+                    :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
+                    :url => "/system/:attachment/:id/:style/:filename"
+
+
 
   def short_description
     Utility.strip_html(self.description).first(100)
