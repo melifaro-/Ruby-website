@@ -17,7 +17,7 @@ HW::Application.routes.draw do
   get "manage_categories/index"
   get "manage_categories/show"
 
-  match 'admin', :to => 'admin#index'
+  match 'admin' => 'admin/admin#index'
 
   resources :manage_categories
   resources :manage_products
@@ -36,7 +36,7 @@ HW::Application.routes.draw do
 
   match '/signup',  :to => 'users#new'
   match '/signin',  :to => 'sessions#new'
-  match '/signout', :to => 'sessions#destroy', :via => :delete
+  match '/signout', :to => 'sessions#destroy'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
