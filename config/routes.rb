@@ -1,17 +1,5 @@
 HW::Application.routes.draw do
 
-  #get "manage_products/index"
-  #
-  #get "manage_products/show"
-  #
-  #get "manage_products/edit"
-  #
-  #get "manage_products/new"
-  #
-  #get "products/index"
-  #
-  #get "products/show"
-
   root :to => 'pages#home'
 
   get "manage_categories/index"

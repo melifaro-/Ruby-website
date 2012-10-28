@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
+gem 'jquery-rails', '2.0.2'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'nokogiri', '1.5.5'
 gem "paperclip", "~> 3.0"
@@ -19,9 +20,6 @@ group :assets do
 
   gem 'uglifier', '1.2.3'
 end
-
-gem 'jquery-rails', '2.0.2'
-
 
 group :production do
   gem 'pg', '0.14.1'
