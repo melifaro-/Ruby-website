@@ -14,6 +14,10 @@ module SessionsHelper
     !current_user.nil?
   end
 
+  def signed_in_admin?
+    !current_user.nil? && current_user.name == "admin"
+  end
+
   def current_user=(user)
     @current_user = user
   end
