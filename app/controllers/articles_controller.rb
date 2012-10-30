@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 
   def index
-    @posts = Post.where(:pcid => 1)
+    @posts = Post.where(:pcid => 1).order("created_at ASC")
   end
 
   def show

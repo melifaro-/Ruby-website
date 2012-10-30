@@ -1,7 +1,7 @@
 class PostsController < Admin::AdminController
 
   def index
-  	@posts = Post.all
+  	@posts = Post.order("created_at ASC")
   end
 
   def show

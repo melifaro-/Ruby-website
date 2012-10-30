@@ -1,6 +1,6 @@
 class ManageCategoriesController < Admin::AdminController
   def index
-    @categories = Category.all
+    @categories = Category.order("created_at ASC")
   end
 
   def show
