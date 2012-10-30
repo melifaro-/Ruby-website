@@ -1,0 +1,9 @@
+development:
+  bucket: medfoxdev
+  access_key_id: AKIAIKW4FJAFVKKB5AZQ
+  secret_access_key: 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
+
+production:
+  bucket: medfox
+  access_key_id: AKIAIKW4FJAFVKKB5AZQ
+  secret_access_key: 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

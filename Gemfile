@@ -5,6 +5,7 @@ gem 'jquery-rails', '2.0.2'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'nokogiri', '1.5.5'
 gem "paperclip", "~> 3.0"
+gem 'aws-sdk'
 
 group :development do
   gem 'sqlite3', '1.3.5'
